@@ -1,6 +1,6 @@
 {
   "name": "yugandhar-portfolio",
-  "homepage": "https://yugandhar-portfolio.github.io/Portfolio/home",
+  "homepage": "https://yugandhar-portfolio.github.io/Portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
