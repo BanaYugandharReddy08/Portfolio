@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
@@ -8,11 +8,8 @@ import EducationPage from './pages/EducationPage';
 import CertificationsPage from './pages/CertificationsPage';
 import ExperiencePage from './pages/ExperiencePage';
 import ContactPage from './pages/ContactPage';
-import LoginPage from './pages/LoginPage';
-import DashboardPage from './pages/DashboardPage';
 import NotFoundPage from './pages/NotFoundPage';
 import ResumeAndCoverPage from './pages/ResumeAndCoverPage';
-import ProtectedRoute from './components/auth/ProtectedRoute';
 import { useAuth } from './context/AuthContext';
 import FloatingChatBot from './pages/FloatingChatBot';
 
@@ -37,9 +34,7 @@ function App() {
           <Route path="/experience" element={<ExperiencePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/resume-and-cover" element={<ResumeAndCoverPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-          <Route path="/Portfolio" element={<HomePage />} />
-          <BrowserRouter basename='/Portfolio'><HomePage/></BrowserRouter>
+          <Route path="*" element={<HomePage />}  />
         </Routes>
       </main>
       <Footer />
