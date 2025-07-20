@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, BrowserRouter } from 'react-router-dom';
 import { useEffect } from 'react';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
@@ -38,6 +38,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/resume-and-cover" element={<ResumeAndCoverPage />} />
           <Route path="*" element={<NotFoundPage />} />
+          <BrowserRouter basename='/Portfolio'><HomePage/></BrowserRouter>
         </Routes>
       </main>
       <Footer />
