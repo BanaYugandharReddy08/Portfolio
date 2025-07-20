@@ -38,6 +38,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/resume-and-cover" element={<ResumeAndCoverPage />} />
           <Route path="*" element={<NotFoundPage />} />
+          <Route path="/Portfolio" element={<HomePage />} />
           <BrowserRouter basename='/Portfolio'><HomePage/></BrowserRouter>
         </Routes>
       </main>
