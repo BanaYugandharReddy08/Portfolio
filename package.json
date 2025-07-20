@@ -1,5 +1,6 @@
 {
   "name": "yugandhar-portfolio",
+  "homepage": "https://yugandhar-portfolio.github.io/Portfolio/home",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,9 +13,10 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "@testing-library/react": "^14.2.1",
     "@testing-library/jest-dom": "^6.1.5",
-    "@testing-library/user-event": "^14.4.3"
+    "@testing-library/react": "^14.2.1",
+    "@testing-library/user-event": "^14.4.3",
+    "gh-pages": "^6.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
