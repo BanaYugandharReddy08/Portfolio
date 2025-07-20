@@ -88,6 +88,7 @@
 .education-details {
   display: grid;
   gap: var(--space-6);
+  padding: 0px !important;
 }
 
 .education-details h4 {
@@ -200,8 +201,3 @@
 
 .fade-in-up { opacity: 0; }
 .run.fade-in-up { animation: fadeUp 0.5s ease-out forwards; }
-
-
-section {
-  padding: 0 !important;
-}
