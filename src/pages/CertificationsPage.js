@@ -301,12 +301,6 @@ const CertificationsPage = () => {
             Below is a curated gallery of every professional course I've completed. Click any tile to view the certificate and a 'What I learned' summary.
           </p>
           
-          {user?.role === 'guest' && (
-            <div className="guest-notice">
-              <p>Welcome! You now have read-only access. Certificates and profile data always stay fresh—no refresh needed.</p>
-            </div>
-          )}
-          
           <div className="filter-controls">
             <div className="categories-filter">
               {categories.map(category => (
