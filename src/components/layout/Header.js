@@ -84,7 +84,7 @@ const Header = () => {
                 </NavLink>
               </li>
               
-              {user ? (
+              {/* {user ? (
                 <>
                   {user.role === 'admin' && (
                     <li className="nav-item">
@@ -105,7 +105,7 @@ const Header = () => {
                     Login
                   </NavLink>
                 </li>
-              )}
+              )} */}
               
               <li className="nav-item theme-toggle">
                 <button 

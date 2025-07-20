@@ -10,6 +10,45 @@ const HomePage = () => {
     requestAnimationFrame(() => setAnimate(true));
   }, []);
 
+  const achievements = [
+    {
+      id: 'ship',
+      title: 'Results that ship',
+      copy:
+        'Cut page-load times by 30% in a SaaS revamp and slashed a legacy telecom portal\u2019s latency from 30 s to <10 s.',
+    },
+    {
+      id: 'trust',
+      title: 'Code you can trust',
+      copy:
+        'Boosted automated-test coverage from 30% \u2192 90% and built zero-downtime CI/CD pipelines.',
+    },
+    {
+      id: 'insight',
+      title: 'Insights that matter',
+      copy:
+        'Created ensemble ML models (RF, XGBoost, LightGBM) that predict Dublin housing prices with 88% accuracy.',
+    },
+    {
+      id: 'leadership',
+      title: 'Agile leadership',
+      copy:
+        'Led Scrum ceremonies, mentored juniors and coordinated cross-functional teams to deliver on time.',
+    },
+    {
+      id: 'foundations',
+      title: 'Full-stack foundations',
+      copy:
+        'Integrated REST APIs and Node services, building reliable data flows from PostgreSQL to React UIs.',
+    },
+    {
+      id: 'mindset',
+      title: 'User-first mindset',
+      copy:
+        'Crafted responsive interfaces and accessibility features that keep users engaged across devices.',
+    },
+  ];
+
   return (
     <div className="home-page">
       {/* ───────── HERO ───────── */}
@@ -24,42 +63,24 @@ const HomePage = () => {
 
             {/* achievements */}
             <div className="achievements">
-              {[
-                {
-                  title: 'Results that ship',
-                  copy:
-                    'Cut page-load times by 30% in a SaaS revamp and slashed a legacy telecom portal’s latency from 30 s to <10 s.',
-                  delay: 0.2,
-                },
-                {
-                  title: 'Code you can trust',
-                  copy:
-                    'Boosted automated-test coverage from 30% → 90% and built zero-downtime CI/CD pipelines.',
-                  delay: 0.4,
-                },
-                {
-                  title: 'Insights that matter',
-                  copy:
-                    'Created ensemble ML models (RF, XGBoost, LightGBM) that predict Dublin housing prices with 88% accuracy.',
-                  delay: 0.6,
-                },
-              ].map(({ title, copy, delay }, i) => (
-                <div
-                  key={i}
-                  className={`achievement-card fade-in-up ${
-                    animate ? 'run' : ''
-                  }`}
-                  style={{ animationDelay: `${delay}s` }}
-                >
-                  <h3>{title}</h3>
-                  <p>{copy}</p>
-                </div>
-              ))}
+              <ul
+                aria-label="Career highlights"
+                className="achievements-scroller"
+              >
+                {achievements.concat(achievements).map(({ id, title, copy }) => (
+                  <li
+                    key={id}
+                    className={`achievement-card fade-in-up ${animate ? 'run' : ''}`}
+                  >
+                    <h3>{title}</h3>
+                    <p>{copy}</p>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <p className="hero-cta">
-              I thrive where elegant UX meets evidence-driven decision-making—
-              and I’m ready to bring that blend to your team.
+            <p className="hero-cta" style={{ textAlign: 'justify' }}>
+              I bring together design, code, and data to create digital experiences that work beautifully and make sense. Whether it’s building a dashboard, a product site, or a data story — I focus on clarity, speed, and results.
             </p>
 
             <div className="hero-buttons">
@@ -82,10 +103,12 @@ const HomePage = () => {
           </div>
 
           <div className="home-about-content">
-            <p>
-              From software developer to data analyst — with a chef’s discipline in between. 
-              I build fast, user-friendly interfaces with React and uncover insights through data.
-               Whether it's code or cuisine, I focus on precision, creativity, and delivering great experiences.
+            <p style={{ justifyContent: 'center', textAlign: 'justify' }}>
+              I'm a front-end developer with 2.5 years of experience building responsive and accessible web applications, and I recently completed my Master’s in Data Analytics. This unique blend of hands-on development and analytical training allows me to build user-friendly interfaces while also understanding the data that drives them.
+
+              I specialize in using modern technologies like React to create clean, high-performance UIs. My recent academic journey has strengthened my ability to work with data, uncover insights, and make smarter design and development decisions.
+
+              Whether I'm coding, analyzing, or collaborating with a team, I focus on clarity, creativity, and delivering meaningful digital experiences.
             </p>
             <Link to="/about" className="button">
               Learn more about me
@@ -150,8 +173,7 @@ const HomePage = () => {
           <div className="contact-cta-content">
             <h2>Let’s Work Together</h2>
             <p>
-              Looking for a front-end engineer who can blend technical
-              excellence with data-driven insights?
+              I bring 2.5 years of front-end development experience, a keen eye for detail, and a mindset focused on continuous learning. I’m open to full-time, remote, or part-time roles — and currently exploring data analytics to round out my skillset.
             </p>
             <Link to="/contact" className="button">
               Contact me

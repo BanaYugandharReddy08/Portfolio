@@ -41,19 +41,39 @@
 }
 
 .achievements {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-6);
+  overflow: hidden;
   margin: var(--space-10) 0;
 }
 
+
+.achievements-scroller {
+  display: flex;
+  gap: var(--space-6);
+  width: max-content;
+  animation: scroll-left 25s linear infinite;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.achievements-scroller > li {
+  list-style: none;
+}
+
+.achievements:hover .achievements-scroller {
+  animation-play-state: paused;
+}
+
 .achievement-card {
+  width: 260px;
   background-color: var(--card);
   border: 1px solid var(--border);
   padding: var(--space-6);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 .achievement-card:hover {
@@ -256,3 +276,8 @@
 
 .fade-in-up { opacity: 0; }
 .run.fade-in-up { animation: fadeUp 0.5s ease-out forwards; }
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

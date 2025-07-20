@@ -14,6 +14,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import ResumeAndCoverPage from './pages/ResumeAndCoverPage';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import { useAuth } from './context/AuthContext';
+import FloatingChatBot from './pages/FloatingChatBot';
 
 function App() {
   const location = useLocation();
@@ -35,21 +36,12 @@ function App() {
           <Route path="/certifications" element={<CertificationsPage />} />
           <Route path="/experience" element={<ExperiencePage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/login" element={<LoginPage />} />
           <Route path="/resume-and-cover" element={<ResumeAndCoverPage />} />
-
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoute>
-                <DashboardPage />
-              </ProtectedRoute>
-            }
-          />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
       <Footer />
+      <FloatingChatBot />
     </div>
   );
 }

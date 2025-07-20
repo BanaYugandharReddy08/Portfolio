@@ -200,3 +200,8 @@
 
 .fade-in-up { opacity: 0; }
 .run.fade-in-up { animation: fadeUp 0.5s ease-out forwards; }
+
+
+section {
+  padding: 0 !important;
+}
