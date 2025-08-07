@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import './CertificationsPage.css';
+import SoftwareEngineer from '../assets/SoftwareEngineerIntern.png'; // Import the software engineer image
+import ReactImage from '../assets/React.png'; // Import the React developer image
+import softwareCert from '../assets/sei_certificate.pdf'
+import fdecret from '../assets/fde_react.pdf'
+import excel from '../assets/excel.png'; // Import the Excel image
 
 
 // Reuse the same mock certificate data from DashboardPage
@@ -201,7 +206,7 @@ const initialCertificates = [
     issuer: 'Macquarie University',
     date: '2023-09-15',
     category: 'Data',
-    imageUrl: 'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg',
+    imageUrl: excel,
     takeaway: `• Progressed from Excel essentials to power-user level across four courses
                • Built dashboards, cleaned large datasets and automated tasks with advanced formulas & macros
                • Applied data-validation, what-if analysis, forecasting and modelling techniques
@@ -278,6 +283,29 @@ const initialCertificates = [
     takeaway: 'Learned end-to-end analytics process from asking questions to driving decisions with data.',
     status: 'Completed'
   },
+  {
+    id: '8',
+    title: 'Software Engineer Intern',
+    issuer: 'HackerRank',
+    date: '2025-05-09',
+    category: 'Hacker Rank',
+    imageUrl: SoftwareEngineer,
+    takeaway: "Demonstrated strong problem-solving abilities and core software engineering principles through HackerRank's Software Engineer Intern certification. Successfully completed algorithmic challenges and coding tasks, showcasing proficiency in data structures, coding efficiency, and real-world technical aptitude.",
+    status: 'Completed',
+    certificate: softwareCert,
+  },
+  {
+    id: '9',
+    title: 'Frontend Developer (React)',
+    issuer: 'HackerRank',
+    date: '2025-05-09',
+    category: 'Hacker Rank',
+    imageUrl: ReactImage,
+    takeaway: "alidated practical skills in building modern web applications using React. This certification covered key frontend concepts including JSX, component lifecycle, hooks, state management, and routing—proving ability to develop responsive, interactive UIs in a production-like environment.",
+    status: 'Completed',
+    certificate: fdecret,
+  },
+  
 ];
 
 const CertificationsPage = () => {
@@ -285,8 +313,9 @@ const CertificationsPage = () => {
   const [selectedCertificate, setSelectedCertificate] = useState(null);
   const [filter, setFilter] = useState('All');
   const { user } = useAuth();
+  const [canEmbed,  setCanEmbed]  = useState(true);
   
-  const categories = ['All', 'Development', 'Data', 'Cloud', 'Design', 'Academic'];
+  const categories = ['All', 'Development', 'Data', 'Cloud', 'Design', 'Academic',"Hacker Rank"];
   
   const filteredCertificates = filter === 'All'
     ? certificates
@@ -404,6 +433,32 @@ const CertificationsPage = () => {
                     ))}
                     </div>
                   
+                  </div>
+                )}
+                {selectedCertificate.certificate && (
+                  <div className="certificate-report-details">
+                    <h3>Certificate</h3>
+                    {canEmbed ? (
+                      <iframe
+                        title={selectedCertificate.certificate}
+                        src={`${selectedCertificate.certificate}#toolbar=0&view=FitH`}
+                        loading="lazy"
+                        style={{ width: '100%', height: '60vh', border: 'none' }}
+                      />
+                    ) : (
+                      <div className="no-preview-wrapper">
+                        <p className="no-preview">
+                          Your browser can’t display PDFs inline.
+                        </p>
+                        <a
+                          href={selectedCertificate.certificate}
+                          download
+                          className="button outline download-report-btn"
+                        >
+                          Download Report
+                        </a>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>

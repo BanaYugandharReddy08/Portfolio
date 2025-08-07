@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './AboutPage.css';
-import Photo from '../Photo.jpg';
+import Photo from '../assets/Photo.jpg';
 
 const AboutPage = () => {
   const [animate, setAnimate] = useState(false);   // flips CSS keyframes on

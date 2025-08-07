@@ -414,6 +414,12 @@
   animation: fadeModal 0.35s ease-out forwards;
 }
 
+.project-links {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
 @keyframes fadeModal {
   to { opacity: 1; transform: scale(1); }
 }

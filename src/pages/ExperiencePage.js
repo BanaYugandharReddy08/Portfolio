@@ -1,7 +1,9 @@
 import { useState,useEffect } from 'react';
 // import { motion } from 'framer-motion';
 import './ExperiencePage.css';
-import report from './report.pdf'; // Import the report file
+import report from '../assets/report.pdf'; // Import the report fil
+import flashcard from '../assets/flashcard.png' // Import the report file
+import portfolio from '../assets/portfolio.png'; // Import the portfolio image
 
 const experiences = [
   {
@@ -69,13 +71,28 @@ const projects = [
   },
   {
     id: 2,
-    title: "React Portfolio Site",
+    title: "Personal Portfolio Website",
     description:
-      "This very portfolio—built with plain React and CSS without relying on frameworks like Next.js or Vite. It showcases my work, CV and contact details in a responsive, animated interface.",
-    technologies: ["React", "React Router", "Framer Motion", "CSS"],
-    imageUrl: "https://images.pexels.com/photos/11035535/pexels-photo-11035535.jpeg",
-    featured: true
-  }
+      "This very portfolio—built with React, JS, HTML and CSS. It showcases my work, CV and contact details in a responsive, animated interface.",
+    technologies: ["React", "React Router", "Redux Toolkit", "JavaScript", "CSS", "HTML", "Git", "GitHub","Responsive Design", "Accessibility",],
+    imageUrl: portfolio,
+    featured: true,
+    gitHubLink: "https://github.com/BanaYugandharReddy08/Portfolio",
+    reportFile: null,
+    projectLink: "https://banayugandharreddy08.github.io/Portfolio/"
+  },
+  {
+    id: 3,
+    title: "Flashcard App",
+    description:
+      "The project is a full-stack Flashcard App featuring a React frontend and an Express backend that generates flashcards and quiz questions using Google Generative AI.",
+    technologies: ["React", "React Router", "Redux Toolkit", "JavaScript", "CSS", "HTML","Node.js" ,"Git", "GitHub","Responsive Design", "Accessibility",],
+    imageUrl: flashcard,
+    featured: true,
+    gitHubLink: "https://github.com/BanaYugandharReddy08/Flashcard",
+    reportFile: null,
+    projectLink: "https://flashcard-1-5xj3.onrender.com/"
+  },
 ];
 
 
@@ -252,6 +269,26 @@ const ExperiencePage = () => {
                       </div>
                     )}
                   </div>
+                )}
+                {selectedProject.gitHubLink && (
+                  <div className="project-links">
+                    <a
+                      href={selectedProject.gitHubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="button outline github-link-btn"
+                    >
+                      View on GitHub
+                    </a>
+                    <a
+                      href={selectedProject.projectLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="button outline project-link-btn"
+                    >
+                      View Live Project
+                    </a>
+                   </div>
                 )}
               </div>
             </div>
