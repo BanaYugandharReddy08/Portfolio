@@ -1,15 +1,22 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.e22f662e.css",
-    "main.js": "/Portfolio/static/js/main.f5c95c05.js",
+    "main.css": "/Portfolio/static/css/main.eeb614c7.css",
+    "main.js": "/Portfolio/static/js/main.1bdffa81.js",
+    "static/media/fde_react.pdf": "/Portfolio/static/media/fde_react.1d540e715f22416bec27.pdf",
+    "static/media/sei_certificate.pdf": "/Portfolio/static/media/sei_certificate.e7351f087d104e03b86d.pdf",
+    "static/media/excel.png": "/Portfolio/static/media/excel.2350e8c24c6c0557feea.png",
     "static/media/Photo.jpg": "/Portfolio/static/media/Photo.b81873bf6cbc09bdefc8.jpg",
+    "static/media/React.png": "/Portfolio/static/media/React.f4e86df8976d4a958c9f.png",
+    "static/media/portfolio.png": "/Portfolio/static/media/portfolio.8ea30515c642b9925a3a.png",
+    "static/media/SoftwareEngineerIntern.png": "/Portfolio/static/media/SoftwareEngineerIntern.924ebd007c707abb343f.png",
+    "static/media/flashcard.png": "/Portfolio/static/media/flashcard.b62887886389cdb9ce53.png",
     "static/media/report.pdf": "/Portfolio/static/media/report.32aa91ecd3ea06b301c9.pdf",
     "index.html": "/Portfolio/index.html",
-    "main.e22f662e.css.map": "/Portfolio/static/css/main.e22f662e.css.map",
-    "main.f5c95c05.js.map": "/Portfolio/static/js/main.f5c95c05.js.map"
+    "main.eeb614c7.css.map": "/Portfolio/static/css/main.eeb614c7.css.map",
+    "main.1bdffa81.js.map": "/Portfolio/static/js/main.1bdffa81.js.map"
   },
   "entrypoints": [
-    "static/css/main.e22f662e.css",
-    "static/js/main.f5c95c05.js"
+    "static/css/main.eeb614c7.css",
+    "static/js/main.1bdffa81.js"
   ]
 }
